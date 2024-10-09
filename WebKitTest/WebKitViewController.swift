@@ -5,27 +5,37 @@
 //  Created by Mikhail Kalatsei on 16/05/2024.
 //
 
+
+
+
 import UIKit
 import WebKit
+import Security
+import CryptoKit
 
 class WebKitViewController: UIViewController {
-    var webView: WKWebView!
-    let allowedDomain = "badssl.com"
+    var webView = WKWebView()
+    var certificateName = "cert1234"
+    var webSiteAdress = "preact-cli.badssl.com"
+
+    var trustedCertificates: [SecCertificate] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupWebView()
         setupRefreshControl()
-        loadUrlFromString("https://\(allowedDomain)")
+        loadUrlFromString("https://piehost.com/websocket-tester?url=wss%3A%2F%2Ffree.blr2.piesocket.com%2Fv3%2F1%3Fapi_key%3DWpXYSGbMiSYTvOICp48s7e4zv7Ze638HH7RQB6eA%26notify_self%3D1")
     }
 
     private func setupWebView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+
+        let contentController = webView.configuration.userContentController
+        contentController.add(self, name: "nativeHandler")
         webView.navigationDelegate = self
         webView.uiDelegate = self
         view.addSubview(webView)
+        webView.uiDelegate = self
         webView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -48,10 +58,12 @@ class WebKitViewController: UIViewController {
         }
     }
 
-    private func showAlert() {
-        let alert = UIAlertController(title: "Forbidden URL", message: "You can't leave this domain", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-        self.present(alert, animated: true, completion: nil)
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     @objc func reloadWebView(_ sender: UIRefreshControl) {
@@ -60,36 +72,14 @@ class WebKitViewController: UIViewController {
     }
 }
 
-extension WebKitViewController: WKNavigationDelegate, WKUIDelegate {
+extension WebKitViewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        switch navigationAction.navigationType {
-        case .linkActivated:
-            if let url = navigationAction.request.url, let host = url.host {
-                if host.contains(allowedDomain) {
-                    decisionHandler(.allow)
-                } else {
-                    showAlert()
-                    decisionHandler(.cancel)
-                }
-            } else {
-                decisionHandler(.cancel)
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "nativeHandler" {
+            // Handle messages sent from JavaScript
+            if let messageBody = message.body as? String {
+                print("Message from JavaScript: \(messageBody)")
             }
-        default:
-            decisionHandler(.allow)
-        }
-    }
-
-    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        DispatchQueue.global().async {
-            if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-                if let serverTrust = challenge.protectionSpace.serverTrust {
-                    let credential = URLCredential(trust: serverTrust)
-                    completionHandler(.useCredential, credential)
-                    return
-                }
-            }
-            completionHandler(.performDefaultHandling, nil)
         }
     }
 }

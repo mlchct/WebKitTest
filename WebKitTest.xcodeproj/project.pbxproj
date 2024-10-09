@@ -7,22 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5839112CB680AA00D83EE9 /* WebKitTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5839102CB680AA00D83EE9 /* WebKitTestTests.swift */; };
 		CEE82BD62BF772DF0021BA5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE82BD52BF772DF0021BA5E /* AppDelegate.swift */; };
 		CEE82BDF2BF772E00021BA5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE82BDE2BF772E00021BA5E /* Assets.xcassets */; };
 		CEE82BE22BF772E00021BA5E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CEE82BE12BF772E00021BA5E /* Base */; };
 		CEE82BEA2BF773230021BA5E /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE82BE92BF773230021BA5E /* WebKitViewController.swift */; };
+		CEE82C2B2C08E9980021BA5E /* medium.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = CEE82C2A2C08E9980021BA5E /* medium.com.cer */; };
+		CEE82C2D2C08EA6D0021BA5E /* _.badssl.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = CEE82C2C2C08EA6D0021BA5E /* _.badssl.com.cer */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE5839122CB680AA00D83EE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEE82BCA2BF772DF0021BA5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEE82BD12BF772DF0021BA5E;
+			remoteInfo = WebKitTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		CE58390E2CB680AA00D83EE9 /* WebKitTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebKitTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5839102CB680AA00D83EE9 /* WebKitTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitTestTests.swift; sourceTree = "<group>"; };
 		CEE82BD22BF772DF0021BA5E /* WebKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE82BD52BF772DF0021BA5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE82BDE2BF772E00021BA5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE82BE12BF772E00021BA5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE82BE32BF772E00021BA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE82BE92BF773230021BA5E /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		CEE82C2A2C08E9980021BA5E /* medium.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = medium.com.cer; sourceTree = "<group>"; };
+		CEE82C2C2C08EA6D0021BA5E /* _.badssl.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = _.badssl.com.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CE58390B2CB680AA00D83EE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEE82BCF2BF772DF0021BA5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,10 +57,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE58390F2CB680AA00D83EE9 /* WebKitTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE5839102CB680AA00D83EE9 /* WebKitTestTests.swift */,
+			);
+			path = WebKitTestTests;
+			sourceTree = "<group>";
+		};
 		CEE82BC92BF772DF0021BA5E = {
 			isa = PBXGroup;
 			children = (
 				CEE82BD42BF772DF0021BA5E /* WebKitTest */,
+				CE58390F2CB680AA00D83EE9 /* WebKitTestTests */,
 				CEE82BD32BF772DF0021BA5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE82BD22BF772DF0021BA5E /* WebKitTest.app */,
+				CE58390E2CB680AA00D83EE9 /* WebKitTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,6 +91,8 @@
 				CEE82BDE2BF772E00021BA5E /* Assets.xcassets */,
 				CEE82BE02BF772E00021BA5E /* LaunchScreen.storyboard */,
 				CEE82BE32BF772E00021BA5E /* Info.plist */,
+				CEE82C2A2C08E9980021BA5E /* medium.com.cer */,
+				CEE82C2C2C08EA6D0021BA5E /* _.badssl.com.cer */,
 			);
 			path = WebKitTest;
 			sourceTree = "<group>";
@@ -64,6 +100,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CE58390D2CB680AA00D83EE9 /* WebKitTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE5839162CB680AA00D83EE9 /* Build configuration list for PBXNativeTarget "WebKitTestTests" */;
+			buildPhases = (
+				CE58390A2CB680AA00D83EE9 /* Sources */,
+				CE58390B2CB680AA00D83EE9 /* Frameworks */,
+				CE58390C2CB680AA00D83EE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE5839132CB680AA00D83EE9 /* PBXTargetDependency */,
+			);
+			name = WebKitTestTests;
+			productName = WebKitTestTests;
+			productReference = CE58390E2CB680AA00D83EE9 /* WebKitTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CEE82BD12BF772DF0021BA5E /* WebKitTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEE82BE62BF772E00021BA5E /* Build configuration list for PBXNativeTarget "WebKitTest" */;
@@ -91,6 +145,10 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					CE58390D2CB680AA00D83EE9 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = CEE82BD12BF772DF0021BA5E;
+					};
 					CEE82BD12BF772DF0021BA5E = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -110,23 +168,41 @@
 			projectRoot = "";
 			targets = (
 				CEE82BD12BF772DF0021BA5E /* WebKitTest */,
+				CE58390D2CB680AA00D83EE9 /* WebKitTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CE58390C2CB680AA00D83EE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEE82BD02BF772DF0021BA5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CEE82BDF2BF772E00021BA5E /* Assets.xcassets in Resources */,
+				CEE82C2B2C08E9980021BA5E /* medium.com.cer in Resources */,
 				CEE82BE22BF772E00021BA5E /* Base in Resources */,
+				CEE82C2D2C08EA6D0021BA5E /* _.badssl.com.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE58390A2CB680AA00D83EE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE5839112CB680AA00D83EE9 /* WebKitTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEE82BCE2BF772DF0021BA5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,6 +213,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE5839132CB680AA00D83EE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEE82BD12BF772DF0021BA5E /* WebKitTest */;
+			targetProxy = CE5839122CB680AA00D83EE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CEE82BE02BF772E00021BA5E /* LaunchScreen.storyboard */ = {
@@ -150,6 +234,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CE5839142CB680AA00D83EE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.company.WebKitTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebKitTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WebKitTest";
+			};
+			name = Debug;
+		};
+		CE5839152CB680AA00D83EE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.company.WebKitTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebKitTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WebKitTest";
+			};
+			name = Release;
+		};
 		CEE82BE42BF772E00021BA5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -324,6 +442,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE5839162CB680AA00D83EE9 /* Build configuration list for PBXNativeTarget "WebKitTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE5839142CB680AA00D83EE9 /* Debug */,
+				CE5839152CB680AA00D83EE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CEE82BCD2BF772DF0021BA5E /* Build configuration list for PBXProject "WebKitTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

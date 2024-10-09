@@ -21,4 +21,8 @@ final class WebKitTestTests: XCTestCase {
         XCTAssert(true)
     }
 
+    func testSecondTrue () {
+        XCTAssert(true)
+    }
+
 }
